@@ -1,0 +1,16 @@
+<app-items-list [listConfig]="listConfig"></app-items-list>
+<div class="counter">Selected Items: {{selectedItems.size}}</div>
+<div class="buttons-container">
+    <app-generic-button 
+        action="Reset"
+        [callback]="resetClick.bind(this)"
+        size="large"
+        type="secondary">
+    </app-generic-button>
+    <app-generic-button 
+        action="Compare!"
+        [callback]="compareClick.bind(this)"
+        size="large"
+        [disabled]="selectedItems.size === 0">
+    </app-generic-button>
+</div>

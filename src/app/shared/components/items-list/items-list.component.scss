@@ -1,0 +1,136 @@
+// Variables for consistent styling
+$primary-color: #4a90e2;
+$secondary-color: #f4f4f4;
+$header-bg-color: #4a90e2;
+$header-text-color: #fff;
+$row-bg-color: #fff;
+$row-alt-bg-color: #f9f9f9;
+$row-hover-bg-color: #e3f2fd;
+$border-color: #ccc;
+$cell-padding: 1rem;
+$font-size: 1rem;
+$border-radius: 8px;
+
+.title {
+    font-size: 2rem;
+    width: 100%;
+    text-align: center;
+    text-decoration: underline;
+    font-weight: 700;
+    padding: 1rem;
+}
+
+.table-container {
+  max-width: 100%;
+  overflow: auto;
+  margin: 1rem 0;
+  border: 1px solid $border-color;
+  border-radius: $border-radius;
+  
+  &::-webkit-scrollbar {
+    height: 12px;
+    width: 12px;
+  }
+  
+  &::-webkit-scrollbar-thumb {
+    background-color: darken($primary-color, 15%);
+    border-radius: $border-radius;
+  }
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: $row-bg-color;
+
+  thead {
+    background-color: $header-bg-color;
+    color: $header-text-color;
+    
+    th {
+      padding: $cell-padding;
+      text-align: left;
+      border-bottom: 2px solid darken($border-color, 10%);
+      font-weight: bold;
+      font-size: 1.2rem;
+      
+      &:first-child {
+        border-left: none;
+      }
+
+      &.sort-indicator {
+        position: absolute;
+        right: 0;
+        top: 50%;
+        transform: translateY(-50%);
+        width: 0;
+        height: 0;
+        border-left: 5px solid transparent;
+        border-right: 5px solid transparent;
+      }
+    }
+  }
+
+  tbody {
+    tr {
+      &:nth-child(odd) {
+        background-color: $row-alt-bg-color;
+      }
+      
+      &:nth-child(even) {
+        background-color: $row-bg-color;
+      }
+
+      &:hover {
+        background-color: $row-hover-bg-color;
+      }
+
+      td {
+        padding: $cell-padding;
+        border-bottom: 1px solid $border-color;
+        font-size: $font-size;
+
+        &:first-child {
+          border-left: none;
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 1024px) {
+  .table-container {
+    max-width: 95%;
+  }
+
+  table {
+    font-size: 0.95rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .table-container {
+    max-width: 90%;
+  }
+
+  table {
+    font-size: 0.9rem;
+  }
+
+  thead {
+    th {
+      font-size: 1rem;
+    }
+  }
+}
+
+@media (max-width: 480px) {
+  .table-container {
+    max-width: 100%;
+  }
+
+  table {
+    font-size: 0.85rem;
+  }
+}

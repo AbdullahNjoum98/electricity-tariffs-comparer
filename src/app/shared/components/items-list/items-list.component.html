@@ -1,0 +1,50 @@
+<header class="title">{{ listConfig.title }}</header>
+<main class="table-container">
+    <table>
+        <thead>
+            <tr>
+                <th>No.</th>
+                @for(header of listConfig.headers; track header) {
+                    @if(header !== 'id') {
+                        <th>
+                            @if(isFieldSortable(header)) {
+                                @if (fieldsSortDirection[header] === 'asc') {
+                                    <span (click)='switchSortDirection(header)'>▲</span>
+                                }
+                                @else {
+                                    <span (click)='switchSortDirection(header)'>▼</span>
+                                }
+                            }
+                            {{ header | titlecase }}
+                        </th>
+                    }
+                }
+                @for(action of listConfig.actions; track $index; let i=$index) {
+                    <th>{{action.action}}</th>
+                }
+            </tr>
+        </thead>
+        <tbody>
+            @for(item of listConfig.data; track item['id']; let i=$index) {
+                <tr>
+                    <td>{{ i+1 }}</td>
+                    @for(key of keys; track key) {
+                        @if(key !== 'id') {
+                            <td>{{ item[key] }}</td>
+                        }   
+                    }
+                    @for(action of listConfig.actions; track $index) {
+                        <td>
+                            <app-generic-button 
+                                [action]="action.action"
+                                [callback]="action.callback.bind(this, action.action, item)"
+                                [disabled]="action.disabled ? action.disabled(item) : false"
+                                >
+                            </app-generic-button>
+                        </td>
+                    }   
+                </tr>
+            }
+        </tbody>
+    </table>
+</main>

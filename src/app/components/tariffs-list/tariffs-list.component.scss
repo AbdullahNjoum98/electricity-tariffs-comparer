@@ -1,0 +1,21 @@
+$counter-bg-color: #4a90e2;;
+$counter-font-color: white;;
+
+.counter { 
+    width: 100%;
+    text-align: center;
+    background-color: $counter-bg-color;
+    color: $counter-font-color;
+}
+.buttons-container {
+    display: flex;
+    width: 100%;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;  
+    & app-generic-button {
+        margin-top: 2rem;
+        text-align: center;
+    }
+}
