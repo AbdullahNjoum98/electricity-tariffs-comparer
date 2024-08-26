@@ -1,15 +1,63 @@
-# ElectricityTariffsComparer
+# Electricity Tariffs Comparer
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 17.3.8.
+## Project Description
+A simple Angular application that displays electricity tariffs with functionalities to sort, add, and delete tariffs for comparison. Users can select tariffs and view them in a dedicated comparison view focusing on the selected items.
 
-## Development server
+## Features
+- **View Tariffs:** See a list of electricity tariffs.
+- **Sort Tariffs:** Sort the tariffs by price.
+- **Add/Delete Tariffs:** Add or delete tariffs from the comparison list.
+- **Compare Tariffs:** Compare selected tariffs in a read-only comparison view.
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+## How to Use the App
 
-## Build
+### 1. Accessing the Source Code
+- The source code is available in the current directory under `src/app`.
+- Alternatively, you can find the source code on GitHub at: [https://github.com/AbdullahNjoum98/electricity-tariffs-comparer](#)
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+### 2. Running the Project Locally
 
-## Running unit tests
+#### **Option 1: Running with Angular CLI**
+1. Ensure you have **Node.js** and **Angular CLI** installed.
+2. Navigate to the project directory.
+3. Run the following command to start the development server:
+    ```bash
+    ng serve
+    ```
+4. Open your browser and navigate to `http://localhost:4200`.
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+#### **Option 2: Running with Docker**
+1. Ensure **Docker** is installed on your machine.
+2. Navigate to the root directory of the project.
+3. Run the following command to build and run the Docker container:
+    ```bash
+    docker-compose up
+    ```
+4. Open your browser and navigate to `http://localhost:4200`.
+
+Alternatively, you can pull the pre-built Docker image from Docker Hub:
+
+- **Docker Hub Image:** [https://hub.docker.com/repository/docker/abdullahnjoum/electricity-tariffs-comparer](#)
+- To pull and run the Docker image directly, use the following commands:
+    ```bash
+    docker pull abdullahnjoum/electricity-tariffs-comparer
+    docker run -d -p 4200:4200 abdullahnjoum/electricity-tariffs-comparer
+    ```
+
+### 3. Running Tests
+- To execute the unit tests via **Karma**, run:
+    ```bash
+    ng test
+    ```
+- For a code coverage report, run:
+    ```bash
+    ng test --code-coverage
+    ```
+- The coverage report will be generated in the `coverage/electricity-tariffs-comparer` folder. Open the `index.html` file in a browser to view the report:
+  - `coverage/electricity-tariffs-comparer/index.html`
+
+## Dependencies
+- **Node.js**
+- **Angular CLI**
+- **Docker** (optional for Docker deployment)
+- **Karma** (for testing)
