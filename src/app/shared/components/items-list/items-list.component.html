@@ -6,17 +6,20 @@
                 <th>No.</th>
                 @for(header of listConfig.headers; track header) {
                     @if(header !== 'id') {
-                        <th>
-                            {{ header | titlecase }}
-                            @if(isFieldSortable(header)) {
+                        @if(isFieldSortable(header)) {
+                            <th class="sortable-header" (click)='switchSortDirection(header)'>
+                                {{ header | titlecase }}
                                 @if (fieldsSortDirection[header] === 'asc') {
-                                    <span class="sort-indicator" (click)='switchSortDirection(header)'>▲</span>
+                                    <span class="sort-indicator">▲</span>
                                 }
                                 @else {
-                                    <span class="sort-indicator" (click)='switchSortDirection(header)'>▼</span>
+                                    <span class="sort-indicator">▼</span>
                                 }
-                            }
-                        </th>
+                            </th>
+                        }
+                        @else {
+                            <th>{{ header | titlecase }}</th>
+                        }
                     }
                 }
                 @for(action of listConfig.actions; track $index; let i=$index) {
