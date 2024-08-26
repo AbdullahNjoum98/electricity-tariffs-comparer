@@ -104,7 +104,7 @@ describe('ItemsListComponent', () => {
         sortFields: ['age'],
         actions: [
           { action: 'Add', callback: jasmine.createSpy('addSpy') },
-          { action: 'Delete', callback: jasmine.createSpy('deleteSpy') },
+          { action: 'Remove', callback: jasmine.createSpy('removeeSpy') },
         ],
       };
       component.ngOnInit();
@@ -123,7 +123,7 @@ describe('ItemsListComponent', () => {
       expect(headers[1].textContent).toContain('Name');
       expect(headers[2].textContent).toContain('Age');
       expect(headers[3].textContent).toContain('Add');
-      expect(headers[4].textContent).toContain('Delete');
+      expect(headers[4].textContent).toContain('Remove');
     });
 
     it('should display the correct data rows', () => {

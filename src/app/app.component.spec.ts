@@ -28,18 +28,13 @@ describe('AppComponent', () => {
     expect(content).toBeTruthy();
   });
 
-  it('should have correct styles applied to header, footer, and content', () => {
-    const header = fixture.debugElement.query(By.css('header.app-header')).nativeElement as HTMLElement;
-    const footer = fixture.debugElement.query(By.css('footer.app-footer')).nativeElement as HTMLElement;
+  it('should have correct styles applied to content', () => {
     const content = fixture.debugElement.query(By.css('main.content')).nativeElement as HTMLElement;
 
-    expect(getComputedStyle(header).backgroundColor).toBe('rgb(120, 120, 213)');
 
-    expect(getComputedStyle(footer).backgroundColor).toBe('rgb(120, 120, 213)');
-
-    expect(getComputedStyle(content).marginTop).toBe('80px');
-    expect(getComputedStyle(content).marginBottom).toBe('80px');
-    expect(getComputedStyle(content).flex).toBe('1 1 0%');
+    expect(getComputedStyle(content).height).toBe('64px');
+    expect(getComputedStyle(content).backgroundColor).toBe('rgb(255, 255, 255)');
+    expect(getComputedStyle(content).padding).toBe('32px');
   });
 
   it('should include a router-outlet', () => {

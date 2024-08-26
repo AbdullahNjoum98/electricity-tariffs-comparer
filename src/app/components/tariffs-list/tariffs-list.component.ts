@@ -39,7 +39,7 @@ export class TariffsListComponent extends DisposableDirective implements OnInit 
           disabled: (item: TariffItemModel) => this.selectedItems.size >= ITEMS_SELETION_LIMIT || this.selectedItems.has(item)
         },
         {
-          action: 'Delete',
+          action: 'Remove',
           callback: this.getActionCallback.bind(this),
           disabled: (item: TariffItemModel) => !this.selectedItems.has(item)
         }
@@ -56,7 +56,7 @@ export class TariffsListComponent extends DisposableDirective implements OnInit 
   getActionCallback(action: string, item: TariffItemModel) {
     if (action === 'Add')
       this.selectedItems.add(item);
-    else if (action === 'Delete')
+    else if (action === 'Remove')
       this.selectedItems.delete(item);
     else
       throw new Error('Unsupported Action');

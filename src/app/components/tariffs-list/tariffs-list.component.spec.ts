@@ -64,10 +64,10 @@ describe('TariffsListComponent', () => {
     expect(component.selectedItems.has(item)).toBeTrue();
   });
 
-  it('should delete item from selectedItems when getActionCallback is called with "Delete"', () => {
+  it('should remove item from selectedItems when getActionCallback is called with "Remove"', () => {
     const item = { price: 100 } as TariffItemModel;
     component.selectedItems.add(item);
-    component.getActionCallback('Delete', item);
+    component.getActionCallback('Remove', item);
     expect(component.selectedItems.has(item)).toBeFalse();
   });
 

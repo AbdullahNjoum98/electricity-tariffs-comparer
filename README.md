@@ -1,12 +1,12 @@
 # Electricity Tariffs Comparer
 
 ## Project Description
-A simple Angular application that displays electricity tariffs with functionalities to sort, add, and delete tariffs for comparison. Users can select tariffs and view them in a dedicated comparison view focusing on the selected items.
+A simple Angular application that displays electricity tariffs with functionalities to sort, add, and remove tariffs for comparison. Users can select tariffs and view them in a dedicated comparison view focusing on the selected items.
 
 ## Features
 - **View Tariffs:** See a list of electricity tariffs.
 - **Sort Tariffs:** Sort the tariffs by price.
-- **Add/Delete Tariffs:** Add or delete tariffs from the comparison list.
+- **Add/Remove Tariffs:** Add or remove tariffs from the comparison list.
 - **Compare Tariffs:** Compare selected tariffs in a read-only comparison view.
 
 ## How to Use the App
@@ -20,7 +20,11 @@ A simple Angular application that displays electricity tariffs with functionalit
 #### **Option 1: Running with Angular CLI**
 1. Ensure you have **Node.js** and **Angular CLI** installed.
 2. Navigate to the project directory.
-3. Run the following command to start the development server:
+3. Run the following command to install npm dependencies:
+    ```bash
+    npm i
+    ```
+4. Run the following command to start the development server:
     ```bash
     ng serve
     ```

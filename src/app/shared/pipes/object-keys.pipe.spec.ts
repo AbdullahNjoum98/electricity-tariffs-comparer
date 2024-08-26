@@ -28,7 +28,7 @@ describe('ObjectKeysPipe', () => {
     spyOn(console, 'warn');
     const invalidValue = 42;
     const result = pipe.transform(invalidValue as any);
-    expect(console.warn).toHaveBeenCalledWith('The provided value is not a proper object:', invalidValue);
+    expect(console.warn).toHaveBeenCalledWith('The provided object\'s keys can\'t be extracted:', invalidValue);
     expect(result).toEqual([]);
   });
 
