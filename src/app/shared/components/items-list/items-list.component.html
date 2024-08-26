@@ -7,15 +7,15 @@
                 @for(header of listConfig.headers; track header) {
                     @if(header !== 'id') {
                         <th>
+                            {{ header | titlecase }}
                             @if(isFieldSortable(header)) {
                                 @if (fieldsSortDirection[header] === 'asc') {
-                                    <span (click)='switchSortDirection(header)'>▲</span>
+                                    <span class="sort-indicator" (click)='switchSortDirection(header)'>▲</span>
                                 }
                                 @else {
-                                    <span (click)='switchSortDirection(header)'>▼</span>
+                                    <span class="sort-indicator" (click)='switchSortDirection(header)'>▼</span>
                                 }
                             }
-                            {{ header | titlecase }}
                         </th>
                     }
                 }
