@@ -1,0 +1,6 @@
+version: '3' #version of docker compose file format
+services:
+  electricity-tariffs-comparer:
+    build: .
+    ports:
+      - "4200:4200"
