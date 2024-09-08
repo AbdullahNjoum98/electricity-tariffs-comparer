@@ -8,7 +8,7 @@ $row-hover-bg-color: #e3f2fd;
 $border-color: #ccc;
 $cell-padding: 1rem;
 $font-size: 1rem;
-$border-radius: 8px;
+$border-radius: .5rem;
 
 :host {
   display: flex;
@@ -34,12 +34,11 @@ $border-radius: 8px;
   border: 1px solid $border-color;
   border-radius: $border-radius;
 
-  &::-webkit-scrollbar {
-    height: 12px;
-    width: 12px;
+  &::-webkit-scrollbar { // the entire scrollbar
+    width: .8rem;
   }
 
-  &::-webkit-scrollbar-thumb {
+  &::-webkit-scrollbar-thumb { //the dragable scrolling handle 
     background-color: darken($primary-color, 15%);
     border-radius: $border-radius;
   }
