@@ -39,6 +39,8 @@ export class ItemsListComponent<T extends Record<string, any>> implements OnInit
       throw new Error('"id" must be presented in passed headers array');
     if (this.keys.length !== this.listConfig.headers.size) 
       throw new Error('Count of headers must be equal to count of data columns');
+    if (this.listConfig.sortFields?.some(sortField => !this.listConfig.headers.has(sortField)))
+      throw new Error('Invalid sort column/s');
   }
 
   isFieldSortable(field: string): boolean {
