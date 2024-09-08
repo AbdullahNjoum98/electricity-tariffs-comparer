@@ -49,6 +49,18 @@ describe('ItemsListComponent', () => {
       expect(() => component.ngOnInit()).toThrowError('Count of headers must be equal to count of data columns');
     });
 
+    it('should throw an error if the sortFeilds contain items that are not in headers', () => {
+      component.listConfig = {
+        title: 'title',
+        headers: new Set(['id', 'name']),
+        data: [{ id: 1, name: 'John' }],
+        sortFields: ['invalid'],
+        actions: [],
+      };
+      expect(() => component.ngOnInit()).toThrowError('Invalid sort column/s');
+    });
+
+
     it('should correctly initialize keys and sort data in desc order on init', () => {
       component.listConfig = {
         title: 'title',
