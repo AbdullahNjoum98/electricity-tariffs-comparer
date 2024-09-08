@@ -3,5 +3,5 @@ export interface ItemListConfiguration<T extends Record<string, any>> {
     headers: Set<string>;
     data: T[];
     sortFields?: string[];
-    actions?: { action: string, callback: (...args: any[]) => any, disabled?: (...args: any[]) => boolean }[];
+    actions?: { action: string, callback: (action: string, item: T, ...args: any[]) => any, disabled?: (item: T, ...args: any) => boolean }[];
 }
