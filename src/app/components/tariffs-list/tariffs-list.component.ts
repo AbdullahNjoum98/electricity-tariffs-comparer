@@ -9,7 +9,7 @@ import { ObjectKeysPipe } from '../../shared/pipes/object-keys.pipe';
 import { GenericButtonComponent } from "../../shared/components/generic-button/generic-button.component";
 import { Router, RouterModule } from '@angular/router';
 
-const ITEMS_SELETION_LIMIT = 3;
+const ITEMS_SELECTION_LIMIT = 3;
 @Component({
   selector: 'app-tariffs-list',
   standalone: true,
@@ -36,7 +36,7 @@ export class TariffsListComponent extends DisposableDirective implements OnInit 
         {
           action: 'Add',
           callback: this.getActionCallback.bind(this),
-          disabled: (item: TariffItemModel) => this.selectedItems.size >= ITEMS_SELETION_LIMIT || this.selectedItems.has(item)
+          disabled: (item: TariffItemModel) => this.selectedItems.size >= ITEMS_SELECTION_LIMIT || this.selectedItems.has(item)
         },
         {
           action: 'Remove',
